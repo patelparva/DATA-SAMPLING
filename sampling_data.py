@@ -17,7 +17,7 @@ def random_set_of_means(counter,data):
 
 def show_fig(data,mean):
     fig=ff.create_distplot([data],['Claps'],show_hist=False)
-    fig.add_trace(go.Scatter(x=[mean,mean],y=[0,0.0035],mode='lines',name='Sample Mean'))
+    fig.add_trace(go.Scatter(x=[mean,mean],y=[0,0.65],mode='lines',name='Sample Mean'))
     fig.show()
 
 def setup(data):
@@ -34,7 +34,7 @@ def setup(data):
 
 def main():
     df=pd.read_csv('medium_data.csv')
-    data=df['claps'].tolist()
+    data=df['reading_time'].tolist()
     population_mean=statistics.mean(data)
 
     setup(data)
